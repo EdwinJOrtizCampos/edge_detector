@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ```
 
 ## How to use the code
-1. Download the Python script or copy the code into a new Python file (e.g., `image_edge_detection.py`).
+1. Download the Python script or copy the code into a new Python file (e.g., `edge_detection.py`).
 
 2. Place your images in a directory and set the `path` variable in the `__main__` block to the path of that directory or place the desired images on the `/images` folder. The script will loop through all the images in the specified directory and apply edge detection to each image.
 
