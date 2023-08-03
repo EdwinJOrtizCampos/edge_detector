@@ -45,4 +45,4 @@ python image_edge_detection.py
 - The code assumes that the input images are in RGB format. If your images are already in grayscale or other formats, you may need to adjust the code accordingly.
 - The threshold values (100 and 200) used for Canny edge detection can be modified based on the images and the desired edge detection results. Experiment with different values to achieve the best results for your specific images.
 
-This is a little project I made to kill some time and learn more about Python. All credits go to the creators of the libraries required to run this script.
+This is a little project I made to kill some time and learn more about Python. All credit goes to the creators of the libraries required to run this script.

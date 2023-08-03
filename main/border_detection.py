@@ -3,21 +3,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-def img_treatment(path):
+def img_treatment(path, blur_amount = (3,3)):
 
     # Read image and apply pre-processing
-    input = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
-    grays = cv2.cvtColor(input, cv2.COLOR_BGR2GRAY)
+    image = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+    grays = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(grays, (5,5), 0)
 
     # Calculate edges and create overlay
     edges = cv2.Canny(blur,100,200)
     edges = np.repeat(edges[:, :, np.newaxis], 3, axis=2)
-    blur2 = cv2.GaussianBlur(edges, (3,3), 0)
+    edge_blur = cv2.GaussianBlur(edges, blur_amount, 0) 
+    
+    # Apply overlay to a copy of the input image
+    image_masked = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+    image_masked[np.where(edge_blur > 0)] = 255
 
-    # Apply overlay and show result
-    result = np.concatenate((input, input + blur2), axis=1)
-
+    # Show input/output comparison using Matplotlib
+    result = np.concatenate((image, image_masked), axis=1)
     plt.imshow(result)
     plt.title("Original | Results")
     plt.axis('off')
