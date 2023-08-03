@@ -23,7 +23,7 @@ pip install -r requirements.txt
 3. Run the script using the following command:
 
 ```bash
-python image_edge_detection.py
+python edge_detection.py
 ```
 
 ## Code Explanation
