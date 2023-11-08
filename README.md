@@ -3,6 +3,8 @@
 
 This Python code provides a simple script for performing image edge detection using OpenCV. It reads images from a specified directory, applies preprocessing steps, detects edges using the Canny algorithm, and then creates an overlay of the original image with the detected edges. The resulting image is displayed using Matplotlib.
 
+see the Jupyter Notebook implementation [here](https://colab.research.google.com/drive/1rfUGzc3fYSrO38b9s6uckX7j3gbEjAvY?usp=sharing).
+
 ## Prerequisites
 Before running the code, ensure you have the following libraries installed:
 - OpenCV (`cv2`)
